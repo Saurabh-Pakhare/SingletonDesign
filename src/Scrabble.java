@@ -12,8 +12,7 @@ public class Scrabble {
     private List<Character> list;
     private final int MAX_LETTERS_IN_BOX = 50;
 
-    private static List userList;
-
+    private List userList;
 
     private Scrabble() {
         list = new LinkedList();
@@ -24,10 +23,10 @@ public class Scrabble {
         private static final Scrabble INSTANCE = new Scrabble();
     }
 
-    public static synchronized Scrabble getInstance(int requiredLetters) {
+    public static Scrabble getInstance(int requiredLetters) {
 
         instance = SingletonHelper.INSTANCE;
-        userList = instance.getScrabbleLetters(requiredLetters);
+        instance.userList = instance.getScrabbleLetters(requiredLetters);
 
         return instance;
     }
