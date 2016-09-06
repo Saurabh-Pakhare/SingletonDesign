@@ -9,8 +9,8 @@ import java.util.Random;
 public class Scrabble {
 
     private static Scrabble instance = null;
-    private static List<Character> list;
-    private static final int MAX_LETTERS_IN_BOX = 50;
+    private List<Character> list;
+    private final int MAX_LETTERS_IN_BOX = 50;
 
     private static List userList;
 
@@ -33,7 +33,7 @@ public class Scrabble {
     }
 
 
-    private static void populateList() {
+    private void populateList() {
         String alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
         Random random = new Random();
